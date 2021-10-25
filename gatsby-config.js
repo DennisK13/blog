@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "blog",
+    title: "HVAC Blog Site",
   },
   plugins: [
     {
@@ -20,7 +20,7 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-plugin-mdx",
+
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -39,5 +39,14 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `posts`,
+        path: `./src/posts`,
+      },
+      __key: "posts"
+    },
+    "gatsby-plugin-mdx",
   ],
 };
